@@ -1,0 +1,26 @@
+{
+  "name": "mysql-sample",
+  "version": "0.0.1",
+  "description": "Simple application to demonstrate mysql connections using node.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "mysql"
+  ],
+  "author": "Chris Dyer",
+  "license": "ISC",
+  "dependencies": {
+    "config": "^1.21.0",
+    "electrolyte": "^0.2.6",
+    "express": "^4.14.0",
+    "morgan": "^1.7.0",
+    "mysql": "^2.11.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3",
+    "sinon": "^1.17.4"
+  }
+}

@@ -6,16 +6,11 @@ exports = module.exports = (database) => {
 
 function User(database) {
     this.database = database;
-    this.findAll = (callback)  => {
-        database.query('select * from user', (error, rows, fields) => {
-            if (error) { return callback(error); }
-            return callback(null, rows);
-        });
-    }
 };
 
-User.prototype.findAll = (callback)  => {
-    this.database.query('select * from user', (error, rows, fields) => {
+User.prototype.findAll = function(callback) {
+    let self = this;
+    self.database.query('select * from user', (error, rows, fields) => {
         if (error) { return callback(error); }
         return callback(null, rows);
     });

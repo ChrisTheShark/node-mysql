@@ -1,14 +1,15 @@
 "use strict";
-const mysql = require('mysql');
+const mysql = require('mysql'),
+      dbConfig = require('config').get('db');
 
 exports = module.exports = function() {
   return mysql.createPool({
-    connectionLimit : 10,
-    host            : "localhost",
-    port            : 3306,
-    user            : "root",
-    password        : "password",
-    database        : "sharks"
+    connectionLimit : dbConfig.connectionLimit,
+    host            : dbConfig.host,
+    port            : dbConfig.port,
+    user            : dbConfig.user,
+    password        : dbConfig.password,
+    database        : dbConfig.database
   });
 }
 

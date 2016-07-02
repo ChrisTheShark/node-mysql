@@ -1,16 +1,16 @@
 "use strict";
-const mysql = require('mysql'),
-      dbConfig = require('config').get('db');
+const mysql = require('mysql');
 
-exports = module.exports = function() {
+exports = module.exports = function(settings) {
   return mysql.createPool({
-    connectionLimit : dbConfig.connectionLimit,
-    host            : dbConfig.host,
-    port            : dbConfig.port,
-    user            : dbConfig.user,
-    password        : dbConfig.password,
-    database        : dbConfig.database
+    connectionLimit : settings.connectionLimit,
+    host            : settings.host,
+    port            : settings.port,
+    user            : settings.user,
+    password        : settings.password,
+    database        : settings.database
   });
 }
 
 exports['@singleton'] = true;
+exports['@require'] = [ './settings' ];

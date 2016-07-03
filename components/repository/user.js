@@ -9,8 +9,7 @@ function User(database) {
 };
 
 User.prototype.findAll = function(callback) {
-    let self = this;
-    self.database.query('select * from user', (error, rows, fields) => {
+    this.database.query('select * from user', (error, rows, fields) => {
         if (error) { return callback(error); }
         return callback(null, rows);
     });
